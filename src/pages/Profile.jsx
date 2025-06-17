@@ -15,7 +15,6 @@ import { HiDotsHorizontal } from "react-icons/hi";
 import { FaHeart, FaRegBookmark, FaRegHeart } from "react-icons/fa6";
 import { LuMessageCircle } from "react-icons/lu";
 import { HiOutlineDotsHorizontal } from "react-icons/hi";
-import CommentPage from "./commentPage";
 import { MdKeyboardArrowDown } from "react-icons/md";
 import { IoIosArrowBack } from "react-icons/io";
 import {
@@ -25,16 +24,14 @@ import {
   DialogHeader,
   DialogTitle,
   DialogTrigger,
-} from "@/components/ui/dialog"
+} from "../components/ui/dialog"
 import { followOrUnfollow } from "@/redux/userSlice";
 import { formatDistanceToNow } from "date-fns";
 import { FaBookmark, FaComment } from "react-icons/fa";
-import FollowersPage from "./FollowersPage";
-import FollowingPage from "./FollowingPage";
-import Following from "@/components/Following";
-import Followers from "@/components/Followers";
+import Following from "../components/Following";
+import Followers from "../components/Followers";
 import { TiHeartFullOutline } from "react-icons/ti";
-import CommentDialog from "@/components/CommentDialog";
+import CommentDialog from "../components/CommentDialog";
 import { VisuallyHidden } from "@radix-ui/react-visually-hidden";
 import { Loader2 } from "lucide-react";
 
@@ -42,7 +39,6 @@ import { Loader2 } from "lucide-react";
 function Profile() {
   const dispatch = useDispatch()
   const navigate = useNavigate()
-  const [uId, setUid] = useState(null)
   const [post, setPosts] = useState(true)
   const [itemId, setItemId] = useState(null)
   const [open, setOpen] = useState(false)
