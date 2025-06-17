@@ -76,7 +76,7 @@ function EditProfilePage() {
                     <p className='text-[20px] font-semibold md:block hidden'>Edit Profile</p>
                 </div>
                 <div className='flex flex-col gap-10'>
-                    <div className='w-full flex justify-between items-center bg-gray-100 p-4 rounded-2xl'>
+                    <div className='w-full flex gap-3 justify-between items-center bg-gray-100 p-4 rounded-2xl'>
                         <div className='flex items-center gap-2'>
                             <div>
                                 <img
@@ -100,7 +100,7 @@ function EditProfilePage() {
 
                         <Dialog>
                             <DialogTrigger asChild>
-                                <button className="text-sm text-white bg-blue-500 rounded-lg px-4 py-2 hover:bg-blue-600 transition">
+                                <button className="md:text-sm text-[10px] text-white bg-blue-500 rounded-lg px-4 py-2 hover:bg-blue-600 transition">
                                     Change photo
                                 </button>
                             </DialogTrigger>
@@ -193,7 +193,7 @@ function EditProfilePage() {
                             ) : (
                                 <button
                                     disabled={!userName && !name && !bio && !gender} // example condition
-                                    className='bg-blue-500 w-1/2 py-3 text-white rounded-[10px] md:mb-0 mb-10'
+                                    className='bg-blue-500 md:w-1/2 w-full py-3 text-white rounded-[10px] md:mb-0 mb-10'
                                     onClick={() => handleSubmit({ userName, name, bio, gender, profilePicture })}
                                 >
 
