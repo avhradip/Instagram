@@ -2,7 +2,6 @@ import { Avatar, AvatarFallback, AvatarImage } from '@radix-ui/react-avatar'
 import { HiDotsHorizontal } from "react-icons/hi";
 import React, { useEffect, useState } from 'react'
 import { Dialog, DialogContent, DialogTitle, DialogTrigger } from '@radix-ui/react-dialog';
-import { Button } from './ui/button';
 import { FaRegHeart } from "react-icons/fa6";
 import { FaHeart } from "react-icons/fa";
 import { formatDistanceToNow } from 'date-fns';
