@@ -1,4 +1,4 @@
-import NotificationNavbar from '@/components/NotificationNavbar'
+import NotificationNavbar from '../components/NotificationNavbar'
 import { followOrUnfollow, getSuggestedUsers } from '@/redux/userSlice';
 import { Avatar, AvatarFallback, AvatarImage } from '@radix-ui/react-avatar';
 import { Loader2 } from 'lucide-react';

@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import { Button } from './ui/button';
-import { Textarea } from './ui/textarea';
 import { Loader2, XIcon } from 'lucide-react';
 import { useDispatch, useSelector } from 'react-redux';
 import { addPost, getAllPosts, getProfile } from '@/redux/postSlice';

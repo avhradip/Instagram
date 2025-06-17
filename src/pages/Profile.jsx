@@ -1,14 +1,13 @@
 import { BsViewList } from "react-icons/bs";
-import Profilenavbar from '@/components/Profilenavbar'
+import Profilenavbar from '../components/Profilenavbar'
 import { useNavigate, useParams } from 'react-router-dom';
 import React, { useEffect, useState } from 'react'
-import { BiGrid } from "react-icons/bi";
 import { IoBookmarkOutline } from "react-icons/io5";
 import { PiTagLight } from "react-icons/pi";
 import axios from 'axios';
 import { useDispatch, useSelector } from 'react-redux';
 import { BsGrid3X3 } from "react-icons/bs";
-import InstagramLoader from '@/components/InstagramLoader';
+import InstagramLoader from '../components/InstagramLoader';
 import { addToBookMark, getAllPosts, getBookMarkedPosts, getUserPosts, handleDeletePost, handleLikeDislikepost, setComment, setProfile } from '@/redux/postSlice';
 import { Avatar, AvatarFallback, AvatarImage } from "@radix-ui/react-avatar";
 import { HiDotsHorizontal } from "react-icons/hi";

@@ -1,11 +1,11 @@
-import CommentDialog from '@/components/CommentDialog';
-import ExploreNavbar from '@/components/ExploreNavbar';
+import CommentDialog from '../components/CommentDialog';
+import ExploreNavbar from '../components/ExploreNavbar';
 import { useDispatch, useSelector } from 'react-redux';
 import React, { useState } from 'react';
 import { FaComment } from 'react-icons/fa';
 import { TiHeartFullOutline } from "react-icons/ti";
 import { setComment } from '@/redux/postSlice';
-import InstagramLoader from '@/components/InstagramLoader';
+import InstagramLoader from '../components/InstagramLoader';
 
 function Explore() {
   const { posts, loading } = useSelector((state) => state?.post);

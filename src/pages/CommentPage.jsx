@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { IoIosArrowBack } from "react-icons/io";
-import CommentNavbar from '@/components/commentNavbar';
-import { Input } from '@/components/ui/input';
+import CommentNavbar from '../components/CommentNavbar';
+import { Input } from '../components/ui/input';
 import { useNavigate, useParams } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { deleteComment, editComment, getComments, handlecomment } from '@/redux/postSlice';
@@ -15,11 +15,10 @@ import {
     DialogHeader,
     DialogTitle,
     DialogTrigger,
-} from "@/components/ui/dialog"
+} from "../components/ui/dialog"
 import { HiOutlineDotsHorizontal } from 'react-icons/hi';
-import { Button } from '@/components/ui/button';
 import { Loader2 } from 'lucide-react';
-import InstagramLoader from '@/components/InstagramLoader';
+import InstagramLoader from '../components/ui/dialog';
 
 function CommentPage() {
     const { id } = useParams()

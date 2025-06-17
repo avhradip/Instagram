@@ -1,4 +1,4 @@
-import PeopleNavbar from '@/components/PeopleNavbar'
+import PeopleNavbar from '../components/PeopleNavbar'
 import { followOrUnfollow, getSuggestedUsers } from '@/redux/userSlice'
 import { Avatar, AvatarFallback, AvatarImage } from '@radix-ui/react-avatar'
 import React, { useState } from 'react'

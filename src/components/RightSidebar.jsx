@@ -10,7 +10,7 @@ import {
     DialogHeader,
     DialogTitle,
     DialogTrigger,
-} from "@/components/ui/dialog"
+} from "../components/ui/dialog"
 import { Button } from './ui/button'
 import logo from "/logo2.png"
 import { followOrUnfollow, getSuggestedUsers, getUserFun } from '@/redux/userSlice'

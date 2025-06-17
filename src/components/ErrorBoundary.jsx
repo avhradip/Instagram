@@ -7,12 +7,10 @@ class ErrorBoundary extends React.Component {
     }
 
     static getDerivedStateFromError(error) {
-        // Update state to trigger fallback UI
         return { hasError: true, error };
     }
 
     componentDidCatch(error, errorInfo) {
-        // Log error details for debugging (you can send to logging service here)
         console.error("ErrorBoundary caught an error:", error, errorInfo);
     }
 

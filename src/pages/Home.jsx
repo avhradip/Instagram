@@ -1,6 +1,6 @@
-import Homenavbar from '@/components/Homenavbar'
-import Posts from '@/components/Posts'
-import RightSidebar from '@/components/RightSidebar'
+import Homenavbar from '../components/Homenavbar'
+import Posts from '../components/Posts'
+import RightSidebar from '../components/RightSidebar'
 import React, { useEffect } from 'react'
 import { useSelector } from 'react-redux'
 

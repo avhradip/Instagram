@@ -1,5 +1,5 @@
-import { Button } from '@/components/ui/button'
-import { Input } from '@/components/ui/input'
+import { Button } from '../components/ui/button'
+import { Input } from '../components/ui/input'
 import { loginFun } from '@/redux/userSlice'
 import React, { useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'

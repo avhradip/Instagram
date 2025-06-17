@@ -4,7 +4,7 @@ import { GoHome } from "react-icons/go";
 import { HiMagnifyingGlass } from "react-icons/hi2";
 import { CiHeart, CiSquarePlus } from "react-icons/ci";
 import { RxHamburgerMenu } from "react-icons/rx";
-import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"; // shadcn/ui version
+import { Avatar, AvatarFallback, AvatarImage } from "../components/ui/avatar"; // shadcn/ui version
 import logo2 from "/logo2.png";
 import logo from "/logo3.jpeg";
 import { Button } from './ui/button';

@@ -1,12 +1,10 @@
-import FollowersNavbar from '@/components/FollowersNavbar'
-import FollowingNavbar from '@/components/FollowingNavbar'
-import InstagramLoader from '@/components/InstagramLoader'
-import { AvatarFallback } from '@/components/ui/avatar'
+import FollowingNavbar from '../components/FollowingNavbar'
+import InstagramLoader from '../components/InstagramLoader'
+import { AvatarFallback } from '../components/ui/avatar'
 import { followOrUnfollow, getFollowers, getFollowing, removeFollower } from '@/redux/userSlice'
 import { Avatar, AvatarImage } from '@radix-ui/react-avatar'
 import { Loader2 } from 'lucide-react'
 import React, { useEffect, useState } from 'react'
-import { HiMagnifyingGlass } from 'react-icons/hi2'
 import { IoSearchOutline } from 'react-icons/io5'
 import { LuDot } from 'react-icons/lu'
 import { RxCross2 } from 'react-icons/rx'
@@ -21,7 +19,7 @@ function FollowingPage() {
   const [results, setResults] = useState([])
   const [loading2, setLoading2] = useState(false);
   const { followings, user, loading, buttonloading } = useSelector((state) => state?.user)
-  // console.log(followings);
+  
   const data = querie.length > 0 ? results : followings;
 
   useEffect(() => {

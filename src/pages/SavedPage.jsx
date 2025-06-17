@@ -6,7 +6,7 @@ import { useNavigate } from 'react-router-dom'
 import { FaComment } from "react-icons/fa";
 import SaveNavbar from './SaveNavbar'
 import { TiHeartFullOutline } from 'react-icons/ti'
-import CommentDialog from '@/components/CommentDialog'
+import CommentDialog from '../components/CommentDialog'
 
 function SavedPage() {
     const navigate = useNavigate()

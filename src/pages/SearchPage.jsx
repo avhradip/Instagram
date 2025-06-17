@@ -1,5 +1,5 @@
-import InstagramLoader from '@/components/InstagramLoader';
-import SearchNavbar from '@/components/SearchNavbar';
+import InstagramLoader from '../components/InstagramLoader';
+import SearchNavbar from '../components/SearchNavbar';
 import { setRecentSearch } from '@/redux/postSlice';
 import { Avatar, AvatarFallback, AvatarImage } from '@radix-ui/react-avatar';
 import { Loader2 } from 'lucide-react';

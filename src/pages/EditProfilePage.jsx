@@ -1,18 +1,16 @@
-import EditNavbar from '@/components/EditNavbar';
-import { Input } from '@/components/ui/input';
-import { Textarea } from '@/components/ui/textarea';
-import { Switch } from "@/components/ui/switch"
+import EditNavbar from '../components/EditNavbar';
+import { Input } from '../components/ui/input';
+import { Textarea } from '../components/ui/textarea';
+import { Switch } from "../components/ui/switch"
 import React, { useState } from 'react'
-import { IoIosArrowBack } from 'react-icons/io';
 import { useDispatch, useSelector } from 'react-redux';
-import { useNavigate } from 'react-router-dom';
 import {
     Select,
     SelectContent,
     SelectItem,
     SelectTrigger,
     SelectValue,
-} from "@/components/ui/select"
+} from "../components/ui/select"
 import {
     Dialog,
     DialogContent,
@@ -20,8 +18,8 @@ import {
     DialogHeader,
     DialogTitle,
     DialogTrigger,
-} from "@/components/ui/dialog"
-import { Button } from '@/components/ui/button';
+} from "../components/ui/dialog"
+import { Button } from '../components/ui/button';
 import { editProfile, getUserFun } from '@/redux/userSlice';
 import { Loader2 } from 'lucide-react';
 
