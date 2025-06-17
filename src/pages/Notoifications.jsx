@@ -39,7 +39,7 @@ function Notification() {
             <p className='font-medium text-[15px] pb-2'>Suggested for you</p>
             <div className='flex flex-col items-center gap-4'>
               {
-                suggestedUsers.map(item => (
+                suggestedUsers?.map(item => (
                   <div className='flex items-center justify-between w-full cursor-pointer' key={item._id} >
                     <div className='flex items-center gap-2' onClick={() => navigate(`/profile/${item._id}`)}>
                       <div>
@@ -56,7 +56,7 @@ function Notification() {
                     {selected === item._id ? (
                       <Loader2 className='animate-spin text-blue-500 w-4 h-4' />
                     ) :
-                      item?.followers.includes(user?._id) ?
+                      item?.followers?.includes(user?._id) ?
                         (<span className='text-sm text-[12px] text-gray-800 font-semibold cursor-pointer' onClick={() => followUnfollow(item._id)}>
                           Following
                         </span>)
