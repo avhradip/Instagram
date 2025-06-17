@@ -15,10 +15,10 @@ import {
     DialogHeader,
     DialogTitle,
     DialogTrigger,
-} from "../components/ui/dialog"
+} from "../components/ui/dialog"  
 import { HiOutlineDotsHorizontal } from 'react-icons/hi';
 import { Loader2 } from 'lucide-react';
-import InstagramLoader from '../components/ui/dialog';
+import InstagramLoader from '../components/InstagramLoader';
 
 function CommentPage() {
     const { id } = useParams()
