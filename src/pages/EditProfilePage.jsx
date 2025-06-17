@@ -39,11 +39,9 @@ function EditProfilePage() {
     const handleFileChange = (e) => {
         const selected = e.target.files[0];
         setProfilePicture(selected);
-        console.log("Selected file:", selected);
     };
 
     const handleSubmit = ({ userName, name, bio, gender, profilePicture }) => {
-        console.log("Values going into FormData:", { userName, name, bio, gender, profilePicture });
 
         const formData = new FormData();
         formData.append("userName", userName);

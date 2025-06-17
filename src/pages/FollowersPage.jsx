@@ -83,7 +83,7 @@ function FollowersPage() {
                 )}
             </div>
             {loading2 ? <InstagramLoader /> :
-                <div div >
+                <div >
                     {
                         loading ? (
                             <InstagramLoader />
