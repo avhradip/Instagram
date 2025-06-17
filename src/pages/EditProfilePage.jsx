@@ -1,5 +1,5 @@
 import EditNavbar from '../components/EditNavbar';
-import { Input } from '../components/ui/input';
+import { Camera } from 'lucide-react';
 import { Textarea } from '../components/ui/textarea';
 import { Switch } from "../components/ui/switch"
 import React, { useState } from 'react'
@@ -22,6 +22,7 @@ import {
 import { Button } from '../components/ui/button';
 import { editProfile, getUserFun } from '@/redux/userSlice';
 import { Loader2 } from 'lucide-react';
+import { RxCross2 } from "react-icons/rx";
 
 
 
@@ -54,7 +55,6 @@ function EditProfilePage() {
             formData.append("profilePicture", profilePicture);
         }
 
-        // Check the FormData contents (log helper below)
         for (let pair of formData.entries()) {
             console.log(pair[0] + ': ' + pair[1]);
         }
@@ -62,6 +62,10 @@ function EditProfilePage() {
         dispatch(editProfile(formData))
         dispatch(getUserFun())
     };
+
+    const cancel = () => {
+        setProfilePicture(null)
+    }
 
 
     return (
@@ -97,18 +101,40 @@ function EditProfilePage() {
                         </div>
 
                         <Dialog>
-                            <DialogTrigger>
-                                <button className='text-[14px] text-white rounded-[10px] bg-blue-500 h-8 px-3'>Change photo</button>
+                            <DialogTrigger asChild>
+                                <button className="text-sm text-white bg-blue-500 rounded-lg px-4 py-2 hover:bg-blue-600 transition">
+                                    Change photo
+                                </button>
                             </DialogTrigger>
-                            <DialogContent>
-                                <div className='flex flex-col items-center justify-center'>
-                                    <DialogHeader>
-                                        <DialogTitle>Change profile photo</DialogTitle>
-                                        <DialogDescription>
-                                        </DialogDescription>
-                                    </DialogHeader>
-                                    <Input id="picture" type="file" onChange={handleFileChange} />
-                                    <DialogTrigger><Button variant="outline" className=''>Cancel</Button></DialogTrigger>
+
+                            <DialogContent className="sm:max-w-md p-6">
+                                <DialogHeader className="mb-4 w-full text-center">
+                                    <DialogTitle className="text-lg font-semibold">Change profile photo</DialogTitle>
+                                    <DialogDescription className="text-sm text-gray-500">
+                                        Select a new image from your device.
+                                    </DialogDescription>
+                                </DialogHeader>
+
+                                <div className="flex flex-col items-center gap-6">
+
+                                    <label
+                                        className="relative w-32 h-32 rounded-full overflow-hidden bg-gray-100 cursor-pointer border-2 border-dashed border-gray-300 flex items-center justify-center hover:bg-gray-200 transition"
+                                    >
+                                        <Camera className="w-8 h-8 text-gray-500" />
+                                        <input
+                                            id="picture"
+                                            type="file"
+                                            accept="image/*"
+                                            onChange={handleFileChange}
+                                            className="absolute inset-0 opacity-0 cursor-pointer"
+                                        />
+
+                                    </label>
+                                    <div className="flex justify-end w-full gap-2">
+                                        <DialogTrigger asChild>
+                                            <Button variant="outline">Cancel</Button>
+                                        </DialogTrigger>
+                                    </div>
                                 </div>
                             </DialogContent>
                         </Dialog>

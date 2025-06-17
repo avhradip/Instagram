@@ -25,7 +25,6 @@ import FollowersPage from '../src/pages/FollowersPage'
 function App() {
   const dispatch = useDispatch()
   const { isAuthenticated, user } = useSelector(state => state.user)
-  console.log(user);
 
   useEffect(() => {
     dispatch(getUserFun())
