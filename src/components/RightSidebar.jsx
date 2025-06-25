@@ -15,6 +15,8 @@ import { Button } from './ui/button'
 import logo from "/logo2.png"
 import { followOrUnfollow, getSuggestedUsers, getUserFun } from '@/redux/userSlice'
 import { Loader2 } from 'lucide-react'
+import HoverCardUi from './HoverCardUi'
+import InstagramLoader from './InstagramLoader'
 
 
 
@@ -92,15 +94,12 @@ function RightSidebar({ user }) {
                 <button className=' text-[12px] hover:text-gray-400 font-semibold cursor-pointer' onClick={() => navigate('/people')}>See All</button>
             </div>
             <div className='flex flex-col items-center gap-4'>
-                {
+                {loading ? <InstagramLoader /> :
                     suggestedUsers?.map(item => (
                         <div className='flex items-center justify-between w-full cursor-pointer' key={item._id}>
                             <div className='flex items-center gap-2' onClick={() => navigate(`/profile/${item._id}`)}>
                                 <div>
-                                    <Avatar>
-                                        <AvatarImage className='w-11 h-11 rounded-full' src={item.profilePicture} />
-                                        <AvatarFallback className='bg-gray-400 w-10 h-10 p-2 rounded-full'>CN</AvatarFallback>
-                                    </Avatar>
+                                    <HoverCardUi item={item} />
                                 </div>
                                 <div>
                                     <p className='font-medium text-[14px]'>{item.userName}</p>

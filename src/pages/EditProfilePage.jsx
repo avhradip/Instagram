@@ -192,7 +192,7 @@ function EditProfilePage() {
                                 </Button>
                             ) : (
                                 <button
-                                    disabled={!userName && !name && !bio && !gender} // example condition
+                                    disabled={!userName && !name && !bio && !gender}
                                     className='bg-blue-500 md:w-1/2 w-full py-3 text-white rounded-[10px] md:mb-0 mb-10'
                                     onClick={() => handleSubmit({ userName, name, bio, gender, profilePicture })}
                                 >

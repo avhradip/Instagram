@@ -35,6 +35,28 @@ export const loginFun = createAsyncThunk('/api/v1/user/login', async (userInfo) 
     }
 })
 
+export const forgotPassword = createAsyncThunk('/api/v1/user/forgotPassword', async (email) => {
+    try {
+        const { data } = await axios.post('https://instagram-backend-bftn.onrender.com/api/v1/user/forgotPassword', { email })
+        return data
+    } catch (error) {
+        console.log("forgotPassword", error);
+    }
+})
+
+export const resetPassword = createAsyncThunk('/api/v1/user/resetPassword', async ({ password, confirmPassword, token }) => {
+    try {
+        const { data } = await axios.post('https://instagram-backend-bftn.onrender.com/api/v1/user/reset-Password', { password, confirmPassword, token }, {
+            headers: {
+                "Authorization": `Bearer ${token}`
+            }
+        })
+        return data
+    } catch (error) {
+        console.log("forgotPassword", error);
+    }
+})
+
 export const getSuggestedUsers = createAsyncThunk('/user/getsuggestedusers', async () => {
     try {
         const token = localStorage.getItem("userToken")
@@ -60,7 +82,6 @@ export const editProfile = createAsyncThunk('/user/editprofile', async (formData
                 "Content-Type": "multipart/form-data",
             }
         })
-        console.log(data);
         return data
     } catch (error) {
         console.log("editProfile", error.message);
@@ -102,8 +123,6 @@ export const getFollowing = createAsyncThunk('user/following', async (id) => {
                 Authorization: `Bearer ${token}`
             }
         })
-        // console.log(data.following);
-        
         return data.following
     } catch (error) {
         console.log("getFollowingFunction", error.message);
@@ -157,7 +176,7 @@ const userSlice = createSlice({
             .addCase(loginFun.fulfilled, (state, action) => {
                 state.loading = false
                 state.error = false
-                state.user=action?.payload?.user
+                state.user = action?.payload?.user
                 state.isAuthenticated = action?.payload?.user?._id ? true : false
             })
 
@@ -248,6 +267,28 @@ const userSlice = createSlice({
             })
             .addCase(removeFollower.rejected, (state) => {
                 state.buttonloading = false
+                state.error = true
+            })
+            .addCase(forgotPassword.pending, (state) => {
+                state.loading = true
+            })
+            .addCase(forgotPassword.fulfilled, (state) => {
+                state.loading = false
+                state.error = false
+            })
+            .addCase(forgotPassword.rejected, (state) => {
+                state.loading = false
+                state.error = true
+            })
+            .addCase(resetPassword.pending, (state) => {
+                state.loading = true
+            })
+            .addCase(resetPassword.fulfilled, (state) => {
+                state.loading = false
+                state.error = false
+            })
+            .addCase(resetPassword.rejected, (state) => {
+                state.loading = false
                 state.error = true
             })
     }

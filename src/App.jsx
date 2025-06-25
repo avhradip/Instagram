@@ -21,6 +21,8 @@ import EditProfilePage from '../src/pages/EditProfilePage'
 import ErrorBoundary from '../src/components/ErrorBoundary'
 import FollowingPage from '../src/pages/FollowingPage'
 import FollowersPage from '../src/pages/FollowersPage'
+import ForgotPassword from './pages/ForgotPassword'
+import ResetPasswordPage from './pages/ResetPasswordPage'
 
 function App() {
   const dispatch = useDispatch()
@@ -77,6 +79,8 @@ function PublicRoutes() {
     <Routes>
       <Route path="/" element={<Login />} />
       <Route path="/register" element={<Register />} />
+      <Route path="/forgotpassword" element={<ForgotPassword />} />
+      <Route path="/reset-password" element={<ResetPasswordPage />} />
       <Route path="*" element={<ErrorPage />} />
     </Routes>
   )

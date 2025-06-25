@@ -1,14 +1,15 @@
 import { Button } from '../components/ui/button'
-import { Input } from '../components/ui/input'
 import { loginFun } from '@/redux/userSlice'
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
-import { Link, useNavigate } from 'react-router-dom'
+import { useNavigate } from 'react-router-dom'
 import loginScreenPic from '/login.png'
 import logo from '../../public/logo2.png'
 import playStore from '/p.png'
 import microsoftStore from '/m.png'
 import { Loader2 } from 'lucide-react'
+import { BsEye } from 'react-icons/bs'
+import { RiEyeCloseLine } from "react-icons/ri";
 
 function Login() {
     const navigate = useNavigate()
@@ -18,6 +19,7 @@ function Login() {
         email: '',
         password: '',
     })
+    const [passShow, setPassShow] = useState(true)
 
     const handleChange = (e) => {
         setFormData({ ...formData, [e.target.name]: e.target.value })
@@ -35,6 +37,10 @@ function Login() {
         }
     }
 
+    useEffect(() => {
+        setPassShow(true)
+    },[])
+
     return (
         <div className="flex items-center justify-center mt-8">
 
@@ -48,20 +54,44 @@ function Login() {
                         onSubmit={handleSubmit}
                         className="flex flex-col gap-4 w-56 h-52 items-center justify-center"
                     >
-                        <Input
-                            type="email"
-                            name="email"
-                            placeholder="Email"
-                            value={formData.email}
-                            onChange={handleChange}
-                        />
-                        <Input
-                            type="password"
-                            name="password"
-                            placeholder="Password"
-                            value={formData.password}
-                            onChange={handleChange}
-                        />
+                        <div className='flex items-center border-1 outline-0 rounded-[10px] w-full h-10'>
+                            <input
+                                type="email"
+                                name="email"
+                                placeholder="Email"
+                                value={formData.email}
+                                onChange={handleChange}
+                                className='border-0 outline-0 pl-2'
+                            />
+                        </div>
+                        
+                        {
+                            passShow ?
+                                <div className='flex items-center border-1 outline-0 rounded-[10px] w-full h-10'>
+                                    <input
+                                        type="password"
+                                        name="password"
+                                        placeholder="Password"
+                                        value={formData.password}
+                                        onChange={handleChange}
+                                        className='border-0 outline-0 pl-2'
+                                    />
+                                    <RiEyeCloseLine size={20} onClick={() => setPassShow(!passShow)} />
+                                </div>
+                                :
+                                <div className='flex items-center border-1 outline-0 rounded-[10px] w-full h-10'>
+                                    <input
+                                        type="text"
+                                        name="password"
+                                        placeholder="Password"
+                                        value={formData.password}
+                                        onChange={handleChange}
+                                        className='border-0 outline-0 pl-2'
+                                    />
+                                    <BsEye size={20} onClick={() => setPassShow(!passShow)} />
+                                </div>
+                        }
+                        <p className='text-blue-600 text-[10px] hover:underline ml-auto' onClick={() => navigate('/forgotpassword')}>Forgot password?</p>
                         <Button type="submit" className="w-full bg-blue-700">
                             {loading ? (<Loader2 className='animate-spin' />) : ("Login")}
                         </Button>
