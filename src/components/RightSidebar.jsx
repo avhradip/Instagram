@@ -94,8 +94,7 @@ function RightSidebar({ user }) {
                 <button className=' text-[12px] hover:text-gray-400 font-semibold cursor-pointer' onClick={() => navigate('/people')}>See All</button>
             </div>
             <div className='flex flex-col items-center gap-4'>
-                {loading ? <InstagramLoader /> :
-                    suggestedUsers?.map(item => (
+                {suggestedUsers?.map(item => (
                         <div className='flex items-center justify-between w-full cursor-pointer' key={item._id}>
                             <div className='flex items-center gap-2' onClick={() => navigate(`/profile/${item._id}`)}>
                                 <div>
