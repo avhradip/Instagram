@@ -68,6 +68,7 @@ function PrivateRoutes() {
         <Route path="/people" element={<People />} />
         <Route path="/following/:id" element={<FollowingPage />} />
         <Route path="/followers/:id" element={<FollowersPage />} />
+        <Route path="/reset-password/:token" element={<ResetPasswordPage />} />
       </Routes>
     </Layout>
   )
@@ -79,7 +80,6 @@ function PublicRoutes() {
       <Route path="/" element={<Login />} />
       <Route path="/register" element={<Register />} />
       <Route path="/forgotpassword" element={<ForgotPassword />} />
-      <Route path="/reset-password/:token" element={<ResetPasswordPage />} />
       <Route path="*" element={<ErrorPage />} />
     </Routes>
   )
