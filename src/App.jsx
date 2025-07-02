@@ -68,7 +68,6 @@ function PrivateRoutes() {
         <Route path="/people" element={<People />} />
         <Route path="/following/:id" element={<FollowingPage />} />
         <Route path="/followers/:id" element={<FollowersPage />} />
-        <Route path="*" element={<ErrorPage />} />
       </Routes>
     </Layout>
   )
